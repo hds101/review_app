@@ -1,0 +1,95 @@
+require: rubocop-rails
+
+AllCops:
+  Exclude:
+    - bin/**/*
+    - config/**/*
+    - config.ru
+    - Rakefile
+
+## Metrics Cops http://rubocop.readthedocs.io/en/latest/cops_metrics/
+Metrics/AbcSize:
+  Description: >-
+                 A calculated magnitude based on number of assignments,
+                 branches, and conditions.
+  StyleGuide: N/A
+  # DefaultMax: 15
+  Max: 20
+
+Metrics/BlockLength:
+  Description: >-
+                This cop checks if the length of a block exceeds some maximum
+                value. Comment lines can optionally be ignored. The maximum
+                allowed length is configurable. The cop can be configured to
+                ignore blocks passed to certain methods.
+  StyleGuide: N/A
+  # DefaultMax: 25
+  Max: 30
+  ExcludedMethods:
+    - describe
+    - context
+    - let
+    - shared_examples
+    - class_methods
+    - included
+    - before
+    - shared_examples_for
+
+Metrics/ClassLength:
+  Description: >-
+                  This cop checks if the length a class exceeds some maximum
+                  value. Comment lines can optionally be ignored. The maximum
+                  allowed length is configurable.
+  StyleGuide: N/A
+  # DefaultMax: 100
+  Max: 200
+
+Metrics/CyclomaticComplexity:
+  Description: >-
+                 A complexity metric that is strongly correlated to the number
+                 of test cases needed to validate a method.
+  StyleGuide: N/A
+  # DefaultMax: 6
+  Max: 10
+
+Metrics/MethodLength:
+  Description: 'Maximum method length.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#short-methods'
+  # DefaultMax: 10
+  Max: 20
+
+Metrics/ModuleLength:
+  Description: 'Maximum number of lines in a Module.'
+  StyleGuide: N/A
+  # DefaultMax: 100
+  Max: 400
+
+Metrics/PerceivedComplexity:
+  Description: >-
+                  This cop tries to produce a complexity score that's a measure
+                  of the complexity the reader experiences when looking at a
+                  method.
+  StyleGuide: N/A
+  # DefaultMax: 7
+  Max: 11
+
+## Layout Cops http://rubocop.readthedocs.io/en/latest/cops_layout/
+Layout/LineLength:
+  Description: 'Maximum line length.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#80-character-limits'
+  # DefaultMax: 80
+  Max: 120
+  IgnoreCopDirectives: true
+
+## Style Cops http://rubocop.readthedocs.io/en/latest/cops_style/
+Style/Documentation:
+  Description: >-
+                  This cop checks for missing top-level documentation of classes
+                  and modules. Classes with no body are exempt from the check
+                  and so are namespace modules - modules that have nothing in
+                  their bodies except classes, other modules, or constant
+                  definitions.
+                  The documentation requirement is annulled if the
+                  class or module has a "#:nodoc:" comment next to it. Likewise,
+                  "#:nodoc: all" does the same for all its children.
+  Enabled: false
