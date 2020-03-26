@@ -5,6 +5,7 @@ AllCops:
     - bin/**/*
     - config/**/*
     - config.ru
+    - node_modules/**/*
     - Rakefile
 
 ## Metrics Cops http://rubocop.readthedocs.io/en/latest/cops_metrics/
