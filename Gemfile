@@ -9,12 +9,12 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 4.1'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
-
 gem 'sass-rails', '>= 6'
 gem 'turbolinks', '~> 5'
 gem 'webpacker', '~> 4.0'
 
 group :development, :test do
+  gem 'dotenv-rails', '~> 2.7.5'
   gem 'factory_bot_rails', '~> 5.1.1'
   gem 'faker', '~> 2.11.0'
   gem 'pry-rails', '~> 0.3.9'
@@ -32,5 +32,6 @@ end
 
 group :test do
   gem 'database_cleaner', '~> 1.8.3'
+  gem 'shoulda-matchers', '~> 4.3.0'
   gem 'simplecov', '~> 0.18.5', require: false
 end
