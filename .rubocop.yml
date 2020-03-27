@@ -1,10 +1,13 @@
-require: rubocop-rails
+require:
+  - rubocop-rails
+  - rubocop-rspec
 
 AllCops:
   Exclude:
     - bin/**/*
     - config/**/*
     - config.ru
+    - db/schema.rb
     - node_modules/**/*
     - Rakefile
 
