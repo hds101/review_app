@@ -1,0 +1,18 @@
+#dashboards-page {
+  margin: 40px auto;
+
+  .form {
+    border: 1px solid black;
+    padding: 16px;
+
+    h4 {
+      font-weight: bold;
+      font-size: 1.333em;
+      margin: 16px 0;
+    }
+
+    &.upload-form {
+      margin-bottom: 8px;
+    }
+  }
+}

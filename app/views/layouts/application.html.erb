@@ -10,6 +10,8 @@
   </head>
 
   <body>
-    <%= yield %>
+    <section class="container" id="<%= params[:controller] %>-page">
+      <%= yield %>
+    </section>
   </body>
 </html>
