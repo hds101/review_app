@@ -1,10 +1,10 @@
-<form class="form upload-form">
-  <h4>Отзывов в базе данных: 1005001</h4>
+<%= form_tag upload_reviews_path, method: :post, multipart: true, class: 'form upload-form' do %>
+  <h4>Отзывов в базе данных: <%= @review_count %></h4>
   <div>
-    <input type="file">
-    <button> Добавить отзывы в БД</button>
+    <%= file_field_tag 'file' %>
+    <%= submit_tag('Добавить отзывы в БД') %>
   </div>
-</form>
+<% end %>
 
 <form class="form report-form">
   <h4>Отчет по загруженным отзывам</h4>

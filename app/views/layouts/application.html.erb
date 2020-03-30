@@ -10,6 +10,11 @@
   </head>
 
   <body>
+    <section class="container flash-bar">
+      <% flash.each do |key, message| %>
+        <div class="alert alert-primary"><%= message %></div>
+      <% end %>
+    </section>
     <section class="container" id="<%= params[:controller] %>-page">
       <%= yield %>
     </section>
