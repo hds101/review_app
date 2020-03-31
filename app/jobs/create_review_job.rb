@@ -22,7 +22,7 @@ class CreateReviewJob < ApplicationJob
     # in languages other than English.
     request.set_form_data(
       api_key: ENV['PARALLELDOTS_API_KEY'],
-      text: @rows.map { |row| row[4] }.to_json
+      text: @rows.map { |row| row[3] }.to_json
     )
 
     response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
