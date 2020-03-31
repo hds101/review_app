@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Важно: Текст отзыва в загружаемом CSV должен быть на английском языке, т.к. бесплатный план ParrallelDots не поддерживает локали.
 
-Things you may want to cover:
+===
 
-* Ruby version
+https://internship.elonsoft.ru/p/test/ruby
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Разработать web-приложение, которое обрабатывает .csv-файлы с отзывами клиентов о работе вымышленного продукта. Эти отзывы были собраны во время не менее вымышленного оффлайн-интервью в разных городах Российской Федерации. Приложение сохраняет их в базу данных и дальше даёт пользователю возможность анализировать их в различных срезах.
