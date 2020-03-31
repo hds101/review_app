@@ -1,16 +1,16 @@
-<%= form_tag upload_reviews_path, method: :post, multipart: true, class: 'form upload-form' do %>
+<%= form_tag upload_reviews_path, method: :post, multipart: true, class: 'form upload-form' do |f| %>
   <h4>Отзывов в базе данных: <%= @review_count %></h4>
   <div>
     <%= file_field_tag 'file' %>
-    <%= submit_tag('Добавить отзывы в БД') %>
+    <%= submit_tag 'Добавить отзывы в БД' %>
   </div>
 <% end %>
 
-<form class="form report-form">
+<%= form_tag reviews_path, method: :get, class: 'form report-form' do |f| %>
   <h4>Отчет по загруженным отзывам</h4>
   <div>
-    <select><option>--- Критерий классификации ---</option></select>
-    <select><option>--- Формат отчета ---</option></select>
-    <button>Сформировать отчет</button>
+    <%= select_tag :group_by, options_for_select(Review::AVAILABLE_GROUPS), prompt: '--- Критерий классификации ---' %>
+    <%= select_tag :format, options_for_select(%w[html xlsx]), prompt: '--- Формат отчета ---' %>
+    <%= submit_tag 'Сформировать отчет' %>
   </div>
-</form>
+<% end %>

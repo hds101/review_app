@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root to: 'dashboards#show'
 
   resource :dashboard, only: :show
-  resources :reviews, only: [] do
+  resources :reviews, only: :index do
     post :upload, on: :collection
   end
 end

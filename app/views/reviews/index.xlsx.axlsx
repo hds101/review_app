@@ -1,0 +1,10 @@
+# frozen_string_literal: true
+
+workbook = xlsx_package.workbook
+@reviews.each do |title, reviews|
+  workbook.add_worksheet(name: "#{title} (#{reviews.size})") do |sheet|
+    reviews.each do |review|
+      sheet.add_row [review.id, review.text]
+    end
+  end
+end

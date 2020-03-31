@@ -1,0 +1,11 @@
+<% @reviews.each do |title, reviews| %>
+  <h1><%= title %> (<%= reviews.size %>)</h1>
+  <table>
+    <% reviews.each do |review| %>
+      <tr>
+        <td><%= review.id %></td>
+        <td><%= review.text %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end%>
