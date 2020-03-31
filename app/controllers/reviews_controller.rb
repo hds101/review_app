@@ -40,13 +40,13 @@ class ReviewsController < ApplicationController
     return if filter_params[:format].present? && filter_params[:group_by].present?
 
     errors = []
-    errors << 'Select report format' if filter_params[:format].blank?
-    errors << 'Select group clause' if filter_params[:group_by].blank?
+    errors << I18n.t('reviews.errors.format') if filter_params[:format].blank?
+    errors << I18n.t('reviews.errors.group') if filter_params[:group_by].blank?
 
     redirect_to root_path, notice: errors.join(', ')
   end
 
   def validate_file
-    redirect_to root_path, notice: 'Select a file to upload' if upload_params[:file].blank?
+    redirect_to root_path, notice: I18n.t('reviews.errors.file') if upload_params[:file].blank?
   end
 end

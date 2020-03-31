@@ -3,7 +3,9 @@
 class Review < ApplicationRecord
   GENDERS = %i[male female].freeze
   EMOTIONS = %i[happy angry excited sad fear bored].freeze
+
   AVAILABLE_GROUPS = %w[author_gender city emotion month time_of_day].freeze
+  AVAILABLE_FORMATS = %w[xlsx html].freeze
 
   enum author_gender: GENDERS
   enum emotion: EMOTIONS
@@ -17,13 +19,13 @@ class Review < ApplicationRecord
   def time_of_day
     case date.hour
     when 6..11
-      'morning'
+      'Morning'
     when 12..17
-      'day'
+      'Day'
     when 17..20
-      'evening'
+      'Evening'
     else
-      'night'
+      'Night'
     end
   end
 end

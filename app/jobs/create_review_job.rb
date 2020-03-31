@@ -51,6 +51,6 @@ class CreateReviewJob < ApplicationJob
   end
 
   def update_reviews_count
-    ActionCable.server.broadcast "reviews_channel", reviews_count: Review.count
+    ActionCable.server.broadcast 'reviews_channel', reviews_count: Review.count
   end
 end
