@@ -2,6 +2,11 @@
 
 Важно: Текст отзыва в загружаемом CSV должен быть на английском языке, т.к. бесплатный план ParrallelDots не поддерживает локали.
 
+==
+
+Heroku:
+http://review-app-qwerty.herokuapp.com
+
 ===
 
 https://internship.elonsoft.ru/p/test/ruby
