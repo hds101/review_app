@@ -1,7 +1,7 @@
 <%= form_tag upload_reviews_path, method: :post, multipart: true, class: 'form upload-form' do |f| %>
   <h4>Отзывов в базе данных: <%= @review_count %></h4>
   <div>
-    <%= file_field_tag 'file' %>
+    <%= file_field_tag :file %>
     <%= submit_tag 'Добавить отзывы в БД' %>
   </div>
 <% end %>
@@ -11,6 +11,6 @@
   <div>
     <%= select_tag :group_by, options_for_select(Review::AVAILABLE_GROUPS), prompt: '--- Критерий классификации ---' %>
     <%= select_tag :format, options_for_select(%w[html xlsx]), prompt: '--- Формат отчета ---' %>
-    <%= submit_tag 'Сформировать отчет' %>
+    <%= submit_tag 'Сформировать отчет', data: { disable_with: false } %>
   </div>
 <% end %>
