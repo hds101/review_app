@@ -21,10 +21,12 @@ group :development, :test do
   gem 'factory_bot_rails', '~> 5.1.1'
   gem 'faker', '~> 2.11.0'
   gem 'pry-rails', '~> 0.3.9'
+  gem 'rails-controller-testing', '~> 1.0.4'
   gem 'rspec-rails', '~> 4.0.0'
   gem 'rubocop', '~> 0.80.1', require: false
   gem 'rubocop-rails', '~> 2.5.0', require: false
   gem 'rubocop-rspec', '~> 1.38.1', require: false
+  gem 'webmock', '~> 3.8.3'
 end
 
 group :development do
