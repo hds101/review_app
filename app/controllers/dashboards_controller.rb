@@ -2,6 +2,6 @@
 
 class DashboardsController < ApplicationController
   def show
-    @review_count = Review.count
+    @reviews_count = Review.count
   end
 end

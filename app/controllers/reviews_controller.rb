@@ -17,8 +17,7 @@ class ReviewsController < ApplicationController
   def upload
     csv = upload_params[:file]
     ReviewBatchProcessor.call(csv)
-    # TODO: update reviews count using ws
-    redirect_to root_path, notice: 'Processing...'
+    redirect_to root_path
   end
 
   private

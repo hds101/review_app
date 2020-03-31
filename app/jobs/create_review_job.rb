@@ -7,6 +7,7 @@ class CreateReviewJob < ApplicationJob
     @rows = review_batch_rows
     fetch_emotions
     create_reviews
+    update_reviews_count
   end
 
   private
@@ -15,9 +16,12 @@ class CreateReviewJob < ApplicationJob
     uri = URI(ENV['PARALLELDOTS_BASE_URL'] + '/emotion_batch')
 
     request = Net::HTTP::Post.new uri
+    # Should also include lang_code: ru, but...
+    # You are currently subscribed to the Free plan.
+    # Please upgrade your account from your dashboard to use ParallelDots APIs
+    # in languages other than English.
     request.set_form_data(
       api_key: ENV['PARALLELDOTS_API_KEY'],
-      lang_code: 'ru',
       text: @rows.map { |row| row[4] }.to_json
     )
 
@@ -44,5 +48,9 @@ class CreateReviewJob < ApplicationJob
         )
       end
     end
+  end
+
+  def update_reviews_count
+    ActionCable.server.broadcast "reviews_channel", reviews_count: Review.count
   end
 end

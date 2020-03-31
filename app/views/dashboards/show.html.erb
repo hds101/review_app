@@ -1,5 +1,5 @@
 <%= form_tag upload_reviews_path, method: :post, multipart: true, class: 'form upload-form' do |f| %>
-  <h4>Отзывов в базе данных: <%= @review_count %></h4>
+  <h4>Отзывов в базе данных: <span id="reviews-count"><%= @reviews_count %></span></h4>
   <div>
     <%= file_field_tag :file %>
     <%= submit_tag 'Добавить отзывы в БД' %>
